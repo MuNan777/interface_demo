@@ -78,8 +78,9 @@ export default defineComponent({
   }
 })
 </script>
+
 <template>
-  <div class="flex items-center justify-between px-1 sm:bg-white dark:border-strokedark dark:bg-boxdark py-3">
+  <div class="flex items-center justify-between px-4 sm:bg-white dark:border-strokedark dark:bg-boxdark py-3">
     <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
       <div>
         <p class="text-sm flex items-center">
@@ -110,6 +111,7 @@ export default defineComponent({
             class="inline-flex items-center rounded-l-md px-2 py-2 ring-1 ring-inset ring-stroke hover:bg-stroke hover:text-strokedark">
             <span class=" i-lucide-chevron-left" @click="() => handlePageChange(page, -1)"></span>
           </a>
+
           <template v-for="(item, index) of generateArray(pages, page)" :key="index">
             <a href="#" v-if="typeof item === 'number'" @click="() => handlePageChange(item)"
               :class="`${page === item && 'bg-stroke text-strokedark'} inline-flex items-center px-4 py-2 ring-1 ring-inset ring-stroke hover:bg-stroke hover:text-strokedark`">

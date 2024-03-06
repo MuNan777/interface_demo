@@ -5,13 +5,15 @@ import DataTable, { ITHeaderItem } from '../../components/DataTable/index.vue'
 import ConfirmDialogs from '../../components/Dialogs/ConfirmDialogs.vue'
 import UserDetail from './detail.vue'
 import Pagination, { IPageData } from '../../components/Pagination/index.vue'
+import DarkModeSwitcher from '../../components/DarkModeSwitcher/index.vue'
 
 export default defineComponent({
   components: {
     DataTable,
     ConfirmDialogs,
     UserDetail,
-    Pagination
+    Pagination,
+    DarkModeSwitcher
   },
   setup() {
     const users = ref<IUser[]>([])
@@ -120,10 +122,13 @@ export default defineComponent({
   },
 }) 
 </script>
+
 <template>
-  <div class="mt-20 mx-auto w-[80%]">
+  <div class="mx-auto w-[80%]">
     <div class="my-3 flex items-center justify-between">
-      <div class="font-bold text-xl">User</div>
+      <div class="flex"><span class="font-bold mr-4 text-2xl">User</span>
+        <DarkModeSwitcher></DarkModeSwitcher>
+      </div>
       <div>
         <button @click="() => handleAction(null, false)"
           class="bg-primary hover:bg-primary1 inline-flex w-full justify-center rounded-md px-5 sm:ml-5 py-2  text-sm font-semibold text-white shadow-lg m:ml-3 sm:w-auto">
@@ -151,13 +156,16 @@ export default defineComponent({
     </DataTable>
     <Pagination :page="page" :pageSize="pageSize" :total="total" @change="pageChange" />
     <ConfirmDialogs v-model:show="show" type="danger" @confirm="handleDelete">
+
       <template #title>
         Delete confirmation
       </template>
+
       <template #body>
         Are you sure you want to delete this user?
       </template>
     </ConfirmDialogs>
-    <UserDetail v-model:show="showDialogs" v-model:user="userData" :disabled="isDetail" @confirm="handleCreateOrUpdate" />
+    <UserDetail v-model:show="showDialogs" v-model:user="userData" :disabled="isDetail"
+      @confirm="handleCreateOrUpdate" />
   </div>
 </template>

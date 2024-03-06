@@ -1,4 +1,3 @@
-
 <script lang="ts">
 import { defineComponent } from 'vue'
 import AlertList from './components/AlertList/index.vue'
@@ -14,10 +13,11 @@ export default defineComponent({
 </script>
 
 <template>
-  <!-- 路由出口 -->
-  <!-- 路由匹配到的组件将渲染在这里 -->
-  <router-view></router-view>
-  <AlertList></AlertList>
-  <Loading></Loading>
+  <div class="dark:bg-boxdark-2 dark:text-bodydark py-10">
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+    <AlertList></AlertList>
+    <Loading></Loading>
+  </div>
 </template>
-
