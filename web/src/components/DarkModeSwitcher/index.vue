@@ -25,7 +25,7 @@ export default defineComponent({
         justify-center rounded-full bg-white shadow-switcher duration-75 ease-linear ${colorMode === 'dark'
     && '!right-[3px] !translate-x-full'}`">
       <span class="dark:hidden pt-1">
-        <span class="i-lucide-sun-dim"></span>
+        <span class="i-lucide-sun"></span>
       </span>
       <span class="hidden dark:inline-block pt-1">
         <span class="i-lucide-moon"></span>
