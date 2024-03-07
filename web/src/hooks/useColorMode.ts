@@ -9,7 +9,7 @@ const useColorMode = () => {
     const className = "dark";
     const bodyClass = window.document.body.classList;
 
-    storedValue.value === "dark"
+    mode === "dark"
       ? bodyClass.add(className)
       : bodyClass.remove(className);
     setValue(mode);

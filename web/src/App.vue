@@ -13,7 +13,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="dark:bg-boxdark-2 dark:text-bodydark py-10">
+  <div class="dark:bg-boxdark-2 dark:text-bodydark py-10 min-h-screen">
     <!-- 路由出口 -->
     <!-- 路由匹配到的组件将渲染在这里 -->
     <router-view></router-view>
